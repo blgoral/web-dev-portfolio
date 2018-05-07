@@ -1,0 +1,32 @@
+html {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white; }
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, #16042c, #290b32, #3d0f35, #501437, #621c37); }
+
+#main-section {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px; }
+
+h1 {
+  color: #aeff00;
+  font-family: 'Orbitron', serif;
+  font-size: 90px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-shadow: -4px -4px #f200ff; }
+
+h2 {
+  color: #aeff00;
+  letter-spacing: 8px;
+  font-size: 35px;
+  padding: 0;
+  margin-top: -10px;
+  margin-bottom: 0; }

@@ -1,0 +1,27 @@
+{
+  "name": "web-dev-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^2.6.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blgoral/web-dev-portfolio.git"
+  },
+  "author": "Blake Goral",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blgoral/web-dev-portfolio/issues"
+  },
+  "homepage": "https://github.com/blgoral/web-dev-portfolio#readme"
+}

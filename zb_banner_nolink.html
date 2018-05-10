@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="ad.size" content="width=728,height=90" charset="utf-8">
+<script type="text/javascript">
+var clickTag = "http://invert-a-bolt.com/eze-drive.php"; </script>
+<style type="text/css">
+
+.sprite {
+	background-image: url(images/spritesheet_min.png);
+	background-repeat: no-repeat;
+	display: block;
+	background-repeat: no-repeat;
+}
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#bgImage {
+	width: 728px;
+    height: 90px;
+	background-position:  -3px -3px;	
+   
+	
+}
+
+.combo {
+	margin: 8px 0;
+}
+#bushing {
+	position: absolute;
+	left: 50px;
+	width: 73px;
+    height: 66px;
+    background-position: -3px -99px;   
+}
+
+#zbushing
+{
+	position: absolute;
+	left:280px;
+	visibility: hidden;
+	width: 118px;
+    height: 73px;
+    background-position: -447px -184px;
+}
+
+#zbushingFront
+{
+	width: 118px;
+    height: 73px;
+    background-position: -571px -184px;
+	position: absolute;
+	left:280px;
+	visibility: hidden;
+	z-index: 3;
+}
+
+#threadedInsert {
+	position: absolute;
+	width: 88px;
+    height: 61px;
+	left: 550px;
+	margin-top: 10px;
+	background-position: -353px -184px;
+}
+#zbglow
+{
+	position: absolute;
+	left: 211px;
+	z-index: 4;
+	visibility: hidden;
+}
+
+#zbglow2
+{
+	position: absolute;
+	left: 211px;
+	z-index: 5;
+	visibility: hidden;
+
+}
+#driver
+{
+	position: absolute;
+	top: 3px;
+	left: -160px;
+	width: 153px;
+    height: 85px;
+    background-position: -194px -184px;
+}
+
+
+#stopMotion {
+	visibility: hidden;
+	position: absolute;
+	left:200px;
+	top: 6px;
+    
+}
+.zbvector{
+	width:250px;
+	height: 71px;
+}
+h1{
+	position: absolute;
+	color: white;
+	font-family: 'Oswald', Arial, Helvetica, sans-serif;
+	margin: 0;
+	text-align: center;
+	font-weight: normal;
+}
+
+#startingText {
+	font-size: 20px;
+	top:10px;
+	left:155px;
+}
+#crazyText{
+	visibility: hidden;
+	left:182px;
+	font-size: 25px;
+	top: 40px;
+}
+#zbText {
+	top:12px;
+	visibility: hidden;
+	left:-670px;
+	font-size: 23px;
+}
+#smFrame1 {
+    width: 185px;
+    height: 79px;
+    background-position: -82px -99px;
+}
+
+#smFrame2 {
+    width: 185px;
+    height: 79px;
+    background-position: -273px -99px;
+}
+
+#smFrame3 {
+    width: 185px;
+    height: 79px;
+    background-position: -464px -99px;
+}
+
+#smFrame4 {
+    width: 185px;
+    height: 79px;
+    background-position: -3px -184px;
+}
+
+
+
+button:hover {
+	background-color: #b34700;
+	color:white;
+
+}
+
+button {
+	visibility: hidden;
+	position: absolute;
+	left: 250px;
+	top: 30px;
+	background-color: #e67300;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 8;
+   
+    
+}
+button:focus {
+	outline: none;
+}
+
+a {
+	display:block;
+}
+
+#wholePage {
+	position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    z-index:7;
+}
+
+#tmText {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+</style>
+	<title>Zip Bushing</title>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+	
+	<!--CDN links for TweenLite, CSSPlugin, and EasePack-->
+<script src="js/CSSPlugin.min.js"></script>
+<script src="js/EasePack.min.js"></script>
+<script src="js/TweenLite.min.js"></script>
+<script src="js/TimelineLite.min.js"></script>
+</head>
+<body>
+
+	
+    
+	<div id="bgImage" class="sprite">
+		<img src="images/zb_vector.svg" class="zbvector combo" id="zbglow2">	
+		<img src="images/zb_vector.svg" class="zbvector combo" id="zbglow">
+		<div class="combo sprite" id="zbushing"></div>
+		<div class="combo sprite" id="zbushingFront"></div>
+		<div class="combo sprite" id="threadedInsert"></div>
+		<div class="combo sprite" id="bushing"></div>
+		<div class="sprite" id="driver"></div>
+		<div id="stopMotion"><div id="smFrame1" class="sprite"></div></div>
+			
+		<span><h1 id="startingText">Why struggle with bushings and threaded inserts<br> when you could be making parts?</h1></span>
+			
+		<span><h1 id="zbText">Drive a patent-pending ZipBushing<span id="tmText">&#8482;</span> into your fixture</h1></span>
+		<span><h1 id="crazyText">instead of driving yourself crazy.</h1></span>
+
+		<button  type="button" id="tryThis">Click for a FREE sample!</button>
+
+		<script type="text/javascript">
+			
+
+//a function to play the stop motion animation
+onload = function startAnimation() { 
+    var frame = document.getElementById("smFrame1");
+    var frameCount = 4
+    var i = 1;
+    setInterval(function () { 
+        frame.id = "smFrame" + i;
+        if(i === frameCount) {
+        	i = 1;
+        }
+        else {
+        	i++;
+        }
+    }, 100);
+}
+
+//create a TimelineLite instance with an argument to make it loop forever
+var tl = new TimelineLite({onComplete:function() {
+    this.restart()}
+});
+
+//create variables for all the images and text on screen
+var bushingPic = document.getElementById("bushing"); 
+var insertPic = document.getElementById("threadedInsert");
+var zbushing = document.getElementById("zbushing");
+var zbGlow = document.getElementById("zbglow");
+var zbGlow2 = document.getElementById("zbglow2");
+var driverPic = document.getElementById("driver");
+var spinning = document.getElementById("stopMotion");
+var startingText = document.getElementById("startingText");
+var zbText = document.getElementById("zbText");
+var crazyText = document.getElementById("crazyText");
+var tryThis = document.getElementById("tryThis");
+//add the bushing and threaded insert images to the timeline so they move at the same time
+//move the bushing against the threaded insert
+
+tl.to(startingText, 0.25, {autoAlpha:0,delay:5});
+
+tl.add([
+
+		TweenLite.to(bushingPic, 1, {x:230,y:0}),
+		TweenLite.to(insertPic, 1, {x:-240,y:0})
+	]);
+
+
+//make the glowing effect visible
+tl.to(zbGlow, 0, {visibility:'visible'});
+tl.to(zbGlow2, 0, {visibility:'visible'});
+
+
+//hide the bushing and threaded insert images
+//fade out the glowing effect
+//unhide the zip bushing image
+tl.add([
+
+		TweenLite.to(zbushing, 1, {visibility:'visible'}),
+		TweenLite.to(zbushingFront, 1, {visibility:'visible'}),
+		TweenLite.to(zbGlow, 1, {autoAlpha:0}),
+		TweenLite.to(zbGlow2, 1, {autoAlpha:0, scale:2}),
+		TweenLite.to(bushingPic, 1, {visibility:'hidden'}),
+		TweenLite.to(insertPic, 1, {visibility:'hidden'})
+	]);
+
+
+tl.to(zbText,0, {visibility: 'visible'});
+
+//move the driver in from the left side
+tl.add([
+	TweenLite.to(driverPic, 0.75, {ease: Power0.easeNone, x:367,y:0}),
+	TweenLite.to(zbText, 0.75, {ease: Power0.easeNone, x:"+=367",y:0})
+	
+	]);
+
+
+
+//hide the static zip bushing image and show the animated, spinning zip bushing
+tl.to(spinning, 0, {visibility:'visible'});
+tl.to(zbushing, 0, {visibility:'hidden'});
+tl.to(driverPic, 0, {visibility:'hidden'});
+tl.to(zbushingFront, 0, {visibility:'hidden'});
+
+//move the spinning zip bushing to the right side with linear easing		
+tl.add([
+	TweenLite.to(spinning, 1, {ease: Power0.easeNone, x:"+=320" , y:0}),
+	TweenLite.to(zbText, 1, {ease: Power0.easeNone, x:"+=320",y:0})
+	]);
+//hide the animated zip bushing and show the static version
+tl.to(spinning, 0, {visibility:'hidden'});
+tl.to(driverPic, 0, {x:"+=310", y:0});
+tl.to(zbushing, 0, {x:"+=310", y:0});
+tl.to(zbushingFront, 0, {x:"+=310", y:0});
+
+
+tl.add([
+	TweenLite.to(zbushing, 1, {visibility:'visible'}),
+	TweenLite.to(driverPic, 1, {visibility:'visible'}),
+	TweenLite.to(zbushingFront, 1, {visibility:'visible'})
+	]);
+
+
+//fade in the text block
+tl.to(crazyText, 0.5, {autoAlpha:1});
+tl.to(crazyText,4, {visibility: 'visible'});
+
+tl.add([
+	TweenLite.to(zbText, 0.5, {autoAlpha:0}),
+	TweenLite.to(crazyText, 0.5, {autoAlpha:0})
+	]);
+
+
+tl.to(driverPic, 1, {x:170, y:0});
+
+
+tl.to(tryThis, 1, {autoAlpha:1});
+tl.to(tryThis, 0, {visibility:'hidden', delay:5});
+
+
+
+		</script>
+	</div>
+</body>
+</html>

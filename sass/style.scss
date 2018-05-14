@@ -1,6 +1,7 @@
 $neonpink : rgb(242,0,255);
 $neongreen: rgb(174, 255, 0);
 $darkpurple: rgba(32,11,79, 0.2);
+$linkpurple: rgba(106, 37, 119, 0.8);
 
 html {
 
@@ -71,4 +72,17 @@ h2 {
 .descrption {
   width: inherit;
   max-width: 550px;
+}
+
+input {
+    background-color: $linkpurple;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+
 }

@@ -53,3 +53,14 @@ h2 {
 .descrption {
   width: inherit;
   max-width: 550px; }
+
+input {
+  background-color: rgba(106, 37, 119, 0.8);
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer; }
